@@ -33,9 +33,7 @@ const numbers = [1, -1, 2, -2, 3, -3];
 }); */
 
 // Din kod här:
-const removeNegatives = numbers.filter( (number) => {
-  return number >= 0;
-});
+const removeNegatives = numbers.filter( (number) => number >= 0);
 
 
 // 2.4 (2p) Skriv om följande funktion (och callback-funktionen) till arrow-funktioner:

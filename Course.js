@@ -1,4 +1,4 @@
-export class Course {
+export default class Course {
     constructor(name, yhp){
         this.name = name,
         this.yhp = yhp

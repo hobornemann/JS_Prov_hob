@@ -1,4 +1,4 @@
-export class Student {
+export default class Student {
     constructor (fullname){
         this.fullname = fullname,
         this.courses = []

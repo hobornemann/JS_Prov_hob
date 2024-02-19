@@ -12,11 +12,31 @@ const cameraGear = [
   
   function calculateTotalPrice(shoppingCart) {
     // Din kod här
-      const prices = shoppingCart.map(item => item.price)
-      prices.reduce((acc, item) => {
-        return acc += item.price
-    })
+    const totalPrice = shoppingCart.reduce((accumulator, item) => {
+      return accumulator += item.price;
+    }, 0)
+    return totalPrice
   }
+
+      /* 
+    let array = [];
+    const totalPrice = 0;
+      const prices = shoppingCart.map(item => {
+       console.log("arr", array)
+        array.push(item.price)
+      }).reduce((acc, curr) => {
+        return acc += curr;
+      }, 0) */
+
+/*     let array = [];
+    const totalPrice = 0;
+      const prices = shoppingCart.map(item => {
+       console.log("arr", array)
+        array.push(item.price)
+      }).reduce((acc, curr) => {
+        return acc += curr;
+      }, 0)
+ */  
 
  
   
