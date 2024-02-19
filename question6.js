@@ -119,7 +119,16 @@ const watchList = [
   function myWatchList(movies) {
 
     // Din kod här:
-
+    if(movies){
+      const data = JSON.parse(movies);
+      const filteredMovies = movies.filter(movie => Number(movie.imdbRating) >= 8)
+      const newMoviesArray = [];
+      filteredMovies.map(movie => {
+        newMoviesArray.title = movie.title;
+        newMoviesArray.rating = movie.rating;
+      })
+      return newMoviesArray;
+    }
   }
 
 

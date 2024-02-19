@@ -8,7 +8,8 @@ const state = {
   };
 
  // Din kod här: 
-
+const state2 = {...state};
+state2.value = 20;
   
   
   // 7.2 (2p) Skriv klart funktionen updateState
@@ -17,8 +18,9 @@ const state = {
   
   function updateState(state, newList) {
     //Din kod här:
-   
+   state.list = [...newList];
 
+   
   }
   
 
@@ -26,3 +28,5 @@ const state = {
   console.log(state2); // Ska logga: { list:[1,2,3], value: 20 }
   console.log(updateState(state, [4, 5, 6])); // Ska logga: { list:[4,5,6], value: 20 }
   
+  console.log(updateState(state, [4, 5, 6])); // Ska logga: { list:[4,5,6], value: 20 }  - 
+                                              // ska ju logga: { list:[4,5,6], value: 10 } 

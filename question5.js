@@ -12,8 +12,13 @@ const cameraGear = [
   
   function calculateTotalPrice(shoppingCart) {
     // Din kod här
-
+      const prices = shoppingCart.map(item => item.price)
+      prices.reduce((acc, item) => {
+        return acc += item.price
+    })
   }
+
+ 
   
 
   // Test

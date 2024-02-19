@@ -10,7 +10,12 @@ const tweets = [
 
 // Din kod här:
 
+const filteredTweets = tweets.filter(tweet => tweet.id === 823423)
 
+const newArray = filteredTweets.map(tweet => {
+  newTweetArray.id = tweet.id;
+})
+return newTweetArray
 
 
 // 8.2 (2p) Använd map för att skapa en ny array "tweetsHtml" med endast texten från varje tweet inom <li>-taggar (utgå från updatedTweets-arrayen)
