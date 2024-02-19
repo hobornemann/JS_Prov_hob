@@ -119,18 +119,31 @@ const watchList = [
   function myWatchList(movies) {
 
     // Din kod här:
-    if(movies){
-      const data = JSON.parse(movies);
+    const allowed = ['title', 'rating'];
       const filteredMovies = movies.filter(movie => Number(movie.imdbRating) >= 8)
+      console.log("filmov:",filteredMovies)
       const newMoviesArray = [];
       filteredMovies.map(movie => {
-        newMoviesArray.title = movie.title;
-        newMoviesArray.rating = movie.rating;
+        let newMovie = {}
+        newMovie.title = movie.title;
+        newMovie.rating = movie.rating;
+        newMoviesArray.push(newMovie)
       })
       return newMoviesArray;
-    }
   }
 
+
+/* 
+const filtered = Object.keys(raw)
+  .filter(key => allowed.includes(key))
+  .reduce((obj, key) => {
+    obj[key] = raw[key];
+    return obj;
+  }, {}); */
+
+
+
+  myWatchList(watchList)
 
   // Test 
   console.log(myWatchList(watchList)); // Ska logga: [{ title: "Inception", rating: "8.8" }, { title: "Interstellar", rating: "8.6" }, { title: "The Dark Knight", rating: "9.0" }, { title: "Batman Begins", rating: "8.3" }]

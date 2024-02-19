@@ -18,9 +18,13 @@ state2.value = 20;
   
   function updateState(state, newList) {
     //Din kod här:
-   state.list = [...newList];
-
-   
+    //console.log("newlist",newList)
+    //const x = [...newList];
+  
+    state.list.splice(0, state.list.length);
+    console.log("state.list:",state.list)
+    state.list = state.list,[...newList];
+   //console.log("state.list",state.list)
   }
   
 
