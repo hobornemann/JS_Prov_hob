@@ -10,13 +10,24 @@ const car = {
   
   function addIsFast(car) {
     // Din kod här
-
+    if(car){
+      if(car.speed > 100) {
+        car.isFast = true
+      } else {
+        car.isFast = false
+      }
+    }
+    car.isFast = true
+    return {...car}
   }
+
+
 
 // 1.2 (1p) Skapa tre variabler name, speed och isFast genom
 // destructuring av objektet som returneras från addIsFast.
 
 // Din kod här:
+const {name, speed, isFast} = addIsFast(car)
 
 
 

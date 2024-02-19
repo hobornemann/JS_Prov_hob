@@ -6,3 +6,26 @@
 
 // Din kod här
 
+
+const apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+const postsElement = document.getElementById("posts")
+
+fetchDataWithAsyncAwait(apiUrl);
+
+async function fetchDataWithAsyncAwait(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    const filteredPosts = data.filter(post => post.userId === 1);
+    const html = filteredPosts.map(post => {
+        return `<p>Title: ${post.title}, Body: ${post.body}</p>`
+    }).join('');
+    postsElement.innerHTML = html;
+  } catch (error) {
+    console.error('Error: ', error);
+  }
+}
+
